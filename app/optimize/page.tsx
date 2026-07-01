@@ -79,7 +79,7 @@ export default function TranslatePage() {
         <div style={{ display: 'flex', alignItems: 'center', marginBottom: 28 }}>
           {steps.map((s, i) => (
             <div key={s} style={{ display: 'flex', alignItems: 'center', flex: i < steps.length - 1 ? 1 : 'none' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+                            <div onClick={() => { const el = document.getElementById('sec-' + (i + 1)); if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' }); }} style={{ display: 'flex', alignItems: 'center', gap: 8, cursor: 'pointer' }}>
                 <span style={{ width: 30, height: 30, borderRadius: 999, display: 'grid', placeItems: 'center', fontSize: 13, fontWeight: 700, border: '2px solid ' + (i <= active ? P : LINE), color: i <= active ? P : MUT, background: CARD }}>{i + 1}</span>
                 <span style={{ fontSize: 14, fontWeight: 600, color: i <= active ? INK : MUT }}>{s}</span>
               </div>
@@ -87,7 +87,7 @@ export default function TranslatePage() {
             </div>
           ))}
         </div>
-        <section style={{ background: CARD, border: '1px solid ' + LINE, borderRadius: 16, padding: 24, marginBottom: 18, boxShadow: '0 1px 2px rgba(16,24,40,.04)' }}>
+                <section id="sec-1" style={{ background: CARD, border: '1px solid ' + LINE, borderRadius: 16, padding: 24, marginBottom: 18, boxShadow: '0 1px 2px rgba(16,24,40,.04)' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
             <span style={{ width: 26, height: 26, borderRadius: 8, background: SOFT, color: P, display: 'grid', placeItems: 'center', fontWeight: 700, fontSize: 13 }}>1</span>
             <h2 style={{ fontSize: 18, fontWeight: 700, margin: 0 }}>Add your CV</h2>
@@ -110,7 +110,7 @@ export default function TranslatePage() {
             <textarea value={cvText} onChange={(e) => setCvText(e.target.value)} placeholder="Paste your CV text here..." style={{ width: '100%', minHeight: 160, borderRadius: 12, border: '1px solid ' + LINE, padding: 14, fontSize: 14, fontFamily: 'inherit', resize: 'vertical', boxSizing: 'border-box' }} />
           )}
         </section>
-        <section style={{ background: CARD, border: '1px solid ' + LINE, borderRadius: 16, padding: 24, marginBottom: 18, boxShadow: '0 1px 2px rgba(16,24,40,.04)' }}>
+                <section id="sec-2" style={{ background: CARD, border: '1px solid ' + LINE, borderRadius: 16, padding: 24, marginBottom: 18, boxShadow: '0 1px 2px rgba(16,24,40,.04)' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
             <span style={{ width: 26, height: 26, borderRadius: 8, background: SOFT, color: P, display: 'grid', placeItems: 'center', fontWeight: 700, fontSize: 13 }}>2</span>
             <h2 style={{ fontSize: 18, fontWeight: 700, margin: 0 }}>The job you're targeting</h2>
@@ -129,7 +129,7 @@ export default function TranslatePage() {
             <span>If the role asks for something we can't find in your CV, we'll <b>flag it and ask</b> â never invent it or stuff keywords you can't back up.</span>
           </div>
         </section>
-        <section style={{ background: CARD, border: '1px solid ' + LINE, borderRadius: 16, padding: 24, marginBottom: 18, boxShadow: '0 1px 2px rgba(16,24,40,.04)' }}>
+                <section id="sec-3" style={{ background: CARD, border: '1px solid ' + LINE, borderRadius: 16, padding: 24, marginBottom: 18, boxShadow: '0 1px 2px rgba(16,24,40,.04)' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
             <span style={{ width: 26, height: 26, borderRadius: 8, background: SOFT, color: P, display: 'grid', placeItems: 'center', fontWeight: 700, fontSize: 13 }}>3</span>
             <h2 style={{ fontSize: 18, fontWeight: 700, margin: 0 }}>Set your direction</h2>
@@ -161,7 +161,7 @@ export default function TranslatePage() {
           <div style={{ margin: '8px 0 0', padding: '12px 16px', borderRadius: 10, background: '#FDECEC', color: '#B42318', fontSize: 13 }}>{err}</div>
         ) : null}
         {position ? (
-          <section style={{ background: CARD, border: '1px solid ' + LINE, borderRadius: 16, padding: 24, marginTop: 20 }}>
+                    <section id="sec-4" style={{ background: CARD, border: '1px solid ' + LINE, borderRadius: 16, padding: 24, marginTop: 20 }}>
             <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '.08em', textTransform: 'uppercase ', color: P }}>Your target and angle</div>
             <div style={{ fontSize: 20, fontWeight: 800, marginTop: 8, color: INK }}>Target: {position.target ? (position.target.role || '-') : '-'}{position.target && position.target.org ? ' . ' + position.target.org : ''}</div>
             <div style={{ fontSize: 14, color: MUT, marginTop: 8, lineHeight: 1.5 }}>{position.positioning_angle}</div>
