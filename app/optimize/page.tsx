@@ -28,7 +28,7 @@ export default function TranslatePage() {
   }
   async function runCorePath() {
     setErr('');
-    if (!cvText.trim()) { setErr('Add your CV first â upload a file or paste the text.'); return; }
+        if (!cvText.trim()) { setErr('Add your CV first — upload a file or paste the text.'); return; }
     if (!jobText.trim()) { setErr('Paste the job description first.'); return; }
     setRunning(true);
     setParsed(null); setPosition(null); setReview(null); setIntel(null); setCoaching(null);
