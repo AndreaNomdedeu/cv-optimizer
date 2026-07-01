@@ -4,7 +4,7 @@ import { useState } from "react";
 
 const BRAND = { primary:"#4F46E5", primaryDark:"#4338CA", secondary:"#0EA5A4", ink:"#1F2433", inkSoft:"#5B6478", surface:"#F7F8FC", surfaceAlt:"#FBFAFF", line:"#ECEDF3" };
 
-const INITIAL = {
+const INITIAL: Record<string, string> = {
   name:"Alex Morgan",
   email:"alex.morgan@email.com",
   phone:"+1 (555) 014-2389",
