@@ -1,0 +1,1869 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CV Optimizer — Interview tips</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --indigo: #5b4fe8;
+        --grad: linear-gradient(135deg, #6d5cf0, #5446d6);
+        --ink: #16172a;
+        --grey: #5c6175;
+        --mut: #9aa0b2;
+        --teal: #13a99c;
+        --green: #1aa251;
+        --red: #e0556b;
+        --eu: #1b4dc4;
+        --lav: #eef0fe;
+        --line: #ececf3;
+        --wash: #f6f7fb;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+        color: var(--ink);
+        background: #fff;
+        -webkit-font-smoothing: antialiased;
+      }
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      /* NAVBAR */
+      .nav {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        background: rgba(255, 255, 255, 0.92);
+        backdrop-filter: blur(8px);
+        border-bottom: 1px solid #f0f0f5;
+      }
+      .navin {
+        max-width: 1200px;
+        margin: 0 auto;
+        height: 74px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 28px;
+      }
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 11px;
+        font-weight: 800;
+        font-size: 20px;
+      }
+      .logo .mk {
+        width: 38px;
+        height: 38px;
+        border-radius: 11px;
+        background: linear-gradient(145deg, #5aa6f0, #5142d8);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .links {
+        display: flex;
+        gap: 34px;
+      }
+      .links a {
+        font-size: 15px;
+        font-weight: 600;
+        color: #5b6072;
+      }
+      .links a.active {
+        color: var(--indigo);
+      }
+      .links a:hover {
+        color: var(--ink);
+      }
+      .navr {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .login {
+        border: 1px solid #e2e2ec;
+        background: #fff;
+        border-radius: 30px;
+        padding: 10px 22px;
+        font-weight: 700;
+        font-size: 14.5px;
+        font-family: inherit;
+        cursor: pointer;
+        color: var(--ink);
+      }
+      .cta {
+        border: none;
+        background: var(--grad);
+        color: #fff;
+        border-radius: 30px;
+        padding: 11px 24px;
+        font-weight: 700;
+        font-size: 14.5px;
+        font-family: inherit;
+        cursor: pointer;
+        box-shadow: 0 10px 22px rgba(91, 79, 232, 0.32);
+      }
+
+      /* HERO */
+      .hero {
+        position: relative;
+        overflow: hidden;
+        text-align: center;
+        padding: 74px 28px 30px;
+      }
+      .hero::before {
+        content: '';
+        position: absolute;
+        top: -120px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 1100px;
+        height: 360px;
+        background: radial-gradient(
+          closest-side,
+          rgba(255, 214, 196, 0.55),
+          transparent 70%
+        );
+        z-index: 0;
+      }
+      .hero::after {
+        content: '';
+        position: absolute;
+        top: -60px;
+        right: -80px;
+        width: 480px;
+        height: 360px;
+        background: radial-gradient(
+          closest-side,
+          rgba(186, 170, 255, 0.4),
+          transparent 70%
+        );
+        z-index: 0;
+      }
+      .hero > * {
+        position: relative;
+        z-index: 1;
+      }
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: var(--lav);
+        color: var(--indigo);
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        padding: 8px 16px;
+        border-radius: 30px;
+        margin-bottom: 22px;
+      }
+      .eyebrow.teal {
+        background: #e2f6f3;
+        color: var(--teal);
+      }
+      .eyebrow .dot {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: currentColor;
+      }
+      .hero h1 {
+        font-size: 56px;
+        font-weight: 800;
+        letter-spacing: -0.025em;
+        line-height: 1.04;
+        max-width: 880px;
+        margin: 0 auto 20px;
+      }
+      .hero p.lead {
+        font-size: 19px;
+        color: var(--grey);
+        line-height: 1.55;
+        max-width: 620px;
+        margin: 0 auto;
+      }
+
+      /* TABS */
+      .tabwrap {
+        display: flex;
+        justify-content: center;
+        padding: 36px 28px 10px;
+      }
+      .tabs {
+        display: inline-flex;
+        gap: 6px;
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 40px;
+        padding: 7px;
+        box-shadow: 0 10px 30px rgba(20, 20, 40, 0.06);
+      }
+      .tab {
+        border: none;
+        background: transparent;
+        padding: 12px 26px;
+        border-radius: 30px;
+        font-weight: 700;
+        font-size: 15px;
+        color: #5b6072;
+        cursor: pointer;
+        font-family: inherit;
+        display: flex;
+        align-items: center;
+        gap: 9px;
+      }
+      .tab .sm {
+        font-size: 11.5px;
+        font-weight: 600;
+        opacity: 0.6;
+      }
+      .tab.active {
+        background: var(--grad);
+        color: #fff;
+        box-shadow: 0 8px 18px rgba(91, 79, 232, 0.3);
+      }
+      .tab.active .sm {
+        opacity: 0.85;
+      }
+
+      .tabpanel {
+        display: none;
+      }
+      .tabpanel.active {
+        display: block;
+        animation: fade 0.3s ease;
+      }
+      @keyframes fade {
+        from {
+          opacity: 0;
+          transform: translateY(8px);
+        }
+        to {
+          opacity: 1;
+          transform: none;
+        }
+      }
+
+      .wrap {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 28px;
+      }
+      .sec {
+        padding: 46px 0;
+      }
+      .sec.wash {
+        background: var(--wash);
+      }
+      .secfull {
+        background: var(--wash);
+      }
+      .sechead {
+        text-align: center;
+        max-width: 720px;
+        margin: 0 auto 34px;
+      }
+      .sechead h2 {
+        font-size: 36px;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        line-height: 1.12;
+        margin-bottom: 14px;
+      }
+      .sechead p {
+        font-size: 17px;
+        color: var(--grey);
+        line-height: 1.55;
+      }
+
+      /* track intro stats */
+      .stats {
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin-top: 26px;
+      }
+      .stat {
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        padding: 16px 24px;
+        text-align: center;
+        box-shadow: 0 6px 20px rgba(20, 20, 40, 0.04);
+      }
+      .stat b {
+        display: block;
+        font-size: 22px;
+        font-weight: 800;
+      }
+      .stat span {
+        font-size: 13px;
+        color: var(--grey);
+      }
+
+      /* steps */
+      .steps {
+        display: grid;
+        gap: 18px;
+      }
+      .steps.s5 {
+        grid-template-columns: repeat(5, 1fr);
+      }
+      .steps.s4 {
+        grid-template-columns: repeat(4, 1fr);
+      }
+      .steps.s3 {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .stp {
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        padding: 22px 20px;
+        box-shadow: 0 8px 26px rgba(20, 20, 40, 0.05);
+      }
+      .stp .lt {
+        min-width: 42px;
+        height: 42px;
+        padding: 0 11px;
+        border-radius: 13px;
+        background: var(--grad);
+        color: #fff;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 800;
+        font-size: 17px;
+        margin-bottom: 14px;
+      }
+      .stp h4 {
+        font-size: 16px;
+        font-weight: 700;
+        margin-bottom: 6px;
+      }
+      .stp p {
+        font-size: 13.5px;
+        color: var(--grey);
+        line-height: 1.5;
+      }
+      .stp .alt {
+        font-size: 11.5px;
+        color: var(--mut);
+        font-weight: 600;
+        margin-top: 7px;
+      }
+
+      /* card + chips */
+      .card {
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 22px;
+        padding: 30px;
+        box-shadow: 0 10px 40px rgba(20, 20, 40, 0.05);
+      }
+      .cgroup {
+        margin-bottom: 20px;
+      }
+      .cgroup:last-child {
+        margin-bottom: 0;
+      }
+      .cglabel {
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--mut);
+        margin-bottom: 12px;
+      }
+      .chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+      .chip {
+        display: inline-flex;
+        align-items: center;
+        gap: 9px;
+        background: #f7f7fc;
+        border: 1px solid #ecebf6;
+        border-radius: 30px;
+        padding: 10px 17px;
+        font-size: 14px;
+        font-weight: 600;
+        color: #3c4150;
+      }
+      .chip .d {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+      }
+      .d.v {
+        background: var(--indigo);
+      }
+      .d.c {
+        background: var(--teal);
+      }
+      .d.m {
+        background: #e0b33a;
+      }
+      .d.e {
+        background: var(--eu);
+      }
+
+      /* do/dont */
+      .dd {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 22px;
+      }
+      .ddcard {
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        padding: 26px;
+        box-shadow: 0 8px 26px rgba(20, 20, 40, 0.05);
+      }
+      .ddcard.do {
+        border-top: 4px solid var(--green);
+      }
+      .ddcard.dont {
+        border-top: 4px solid var(--red);
+      }
+      .ddh {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 800;
+        font-size: 17px;
+        margin-bottom: 16px;
+      }
+      .ddh.do {
+        color: var(--green);
+      }
+      .ddh.dont {
+        color: var(--red);
+      }
+      .ddli {
+        display: flex;
+        gap: 11px;
+        font-size: 14.5px;
+        color: #3c4150;
+        line-height: 1.5;
+        margin-bottom: 13px;
+      }
+      .ddli:last-child {
+        margin-bottom: 0;
+      }
+      .ddli svg {
+        flex-shrink: 0;
+        margin-top: 2px;
+      }
+
+      /* question-bank teaser (locked) */
+      .bank {
+        position: relative;
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 22px;
+        padding: 30px;
+        box-shadow: 0 10px 40px rgba(20, 20, 40, 0.05);
+        overflow: hidden;
+      }
+      .qrow {
+        display: flex;
+        align-items: center;
+        gap: 13px;
+        padding: 15px 0;
+        border-bottom: 1px solid #f1f1f6;
+        font-size: 15px;
+        font-weight: 600;
+        color: #3c4150;
+      }
+      .qrow:last-of-type {
+        border-bottom: none;
+      }
+      .qrow .ci {
+        min-width: 30px;
+        height: 30px;
+        padding: 0 8px;
+        border-radius: 9px;
+        background: var(--lav);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--indigo);
+        font-weight: 800;
+        font-size: 13px;
+      }
+      .fade {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 64px;
+        height: 120px;
+        background: linear-gradient(transparent, #fff);
+      }
+      .lock {
+        position: relative;
+        text-align: center;
+        padding-top: 14px;
+      }
+      .lock .lk {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 13.5px;
+        font-weight: 700;
+        color: var(--mut);
+        margin-bottom: 14px;
+      }
+      .lock .go {
+        border: none;
+        background: var(--grad);
+        color: #fff;
+        border-radius: 30px;
+        padding: 13px 26px;
+        font-weight: 700;
+        font-size: 15px;
+        font-family: inherit;
+        cursor: pointer;
+        box-shadow: 0 10px 22px rgba(91, 79, 232, 0.3);
+      }
+
+      /* callout */
+      .hr {
+        background: linear-gradient(180deg, #f3f2fd, #fbfbff);
+        border: 1px solid #e6e3f7;
+        border-left: 5px solid var(--indigo);
+        border-radius: 20px;
+        padding: 30px;
+      }
+      .hr.euc {
+        border-left-color: var(--eu);
+        background: linear-gradient(180deg, #eef3fd, #fbfcff);
+        border-color: #dde7f7;
+      }
+      .hr .hh {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 800;
+        font-size: 18px;
+        color: var(--indigo);
+        margin-bottom: 10px;
+      }
+      .hr.euc .hh {
+        color: var(--eu);
+      }
+      .hr p {
+        font-size: 15px;
+        color: #4a4f60;
+        line-height: 1.6;
+        margin-bottom: 18px;
+        max-width: 800px;
+      }
+      .hrgrid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+        margin-bottom: 18px;
+      }
+      .hrcard {
+        background: #fff;
+        border: 1px solid #e9e7f5;
+        border-radius: 14px;
+        padding: 17px 18px;
+      }
+      .hrcard b {
+        font-size: 14.5px;
+      }
+      .hrcard span {
+        display: block;
+        font-size: 13px;
+        color: var(--grey);
+        margin-top: 5px;
+        line-height: 1.5;
+      }
+      .hrtip {
+        background: #fff;
+        border: 1px dashed #cdc8ef;
+        border-radius: 12px;
+        padding: 15px 17px;
+        font-size: 14px;
+        color: #4a4f60;
+        line-height: 1.55;
+      }
+      .hrtip b {
+        color: var(--indigo);
+      }
+
+      /* big CTA band */
+      .ctaband {
+        max-width: 1100px;
+        margin: 30px auto 70px;
+        border-radius: 28px;
+        background: var(--grad);
+        color: #fff;
+        text-align: center;
+        padding: 54px 28px;
+        position: relative;
+        overflow: hidden;
+      }
+      .ctaband::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background-image: radial-gradient(
+          rgba(255, 255, 255, 0.18) 1px,
+          transparent 1px
+        );
+        background-size: 24px 24px;
+        opacity: 0.5;
+        -webkit-mask-image: linear-gradient(120deg, transparent 55%, #000);
+        mask-image: linear-gradient(120deg, transparent 55%, #000);
+      }
+      .ctaband > * {
+        position: relative;
+        z-index: 1;
+      }
+      .ctaband h2 {
+        font-size: 34px;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        margin-bottom: 12px;
+      }
+      .ctaband p {
+        font-size: 16px;
+        color: rgba(255, 255, 255, 0.9);
+        margin-bottom: 24px;
+        max-width: 560px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .ctaband .b {
+        border: none;
+        background: #fff;
+        color: var(--indigo);
+        border-radius: 30px;
+        padding: 15px 30px;
+        font-weight: 800;
+        font-size: 16px;
+        font-family: inherit;
+        cursor: pointer;
+      }
+
+      @media (max-width: 920px) {
+        .links,
+        .login {
+          display: none;
+        }
+        .hero h1 {
+          font-size: 38px;
+        }
+        .sechead h2 {
+          font-size: 28px;
+        }
+        .steps.s5,
+        .steps.s4,
+        .steps.s3 {
+          grid-template-columns: 1fr 1fr;
+        }
+        .dd,
+        .hrgrid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <header class="nav">
+      <div class="navin">
+        <a class="logo" href="/"
+          ><span class="mk"
+            ><svg
+              viewBox="0 0 36 36"
+              width="36"
+              height="36"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <defs>
+                <linearGradient
+                  id="cvg"
+                  x1="0"
+                  y1="0"
+                  x2="36"
+                  y2="36"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop stop-color="#4F46E5" />
+                  <stop offset="0.55" stop-color="#2563EB" />
+                  <stop offset="1" stop-color="#1AB5C9" />
+                </linearGradient>
+              </defs>
+              <rect width="36" height="36" rx="9" fill="url(#cvg)" />
+              <path
+                d="M9 9.5a1.5 1.5 0 0 1 1.5-1.5h9.7l5.3 5.3v13.2a1.5 1.5 0 0 1-1.5 1.5H10.5A1.5 1.5 0 0 1 9 26.5z"
+                fill="#ffffff"
+              />
+              <path d="M20.2 8v3.8a1.5 1.5 0 0 0 1.5 1.5h3.8z" fill="#3B6FD4" />
+              <circle cx="14.8" cy="14.6" r="2.3" fill="#3B6FD4" />
+              <path
+                d="M11.2 19.6c0-2 1.6-3.2 3.6-3.2s3.6 1.2 3.6 3.2z"
+                fill="#3B6FD4"
+              />
+              <rect
+                x="11.2"
+                y="20.8"
+                width="9.4"
+                height="1.5"
+                rx="0.75"
+                fill="#3B6FD4"
+              />
+              <rect
+                x="11.2"
+                y="23.2"
+                width="8"
+                height="1.5"
+                rx="0.75"
+                fill="#3B6FD4"
+              />
+              <rect
+                x="11.2"
+                y="25.6"
+                width="6"
+                height="1.5"
+                rx="0.75"
+                fill="#3B6FD4"
+              />
+              <circle cx="24.5" cy="25.5" r="5.2" fill="#ffffff" />
+              <path
+                d="M24.8 21.6l0.7 2.1 2.1 0.7-2.1 0.7-0.7 2.1-0.7-2.1-2.1-0.7 2.1-0.7z"
+                fill="#3B6FD4"
+              />
+              <path
+                d="M22.3 26.2l0.4 1.2 1.2 0.4-1.2 0.4-0.4 1.2-0.4-1.2-1.2-0.4 1.2-0.4z"
+                fill="#3B6FD4"
+              /></svg></span
+          >CV Optimizer</a
+        >
+        <nav class="links">
+          <a href="/how-it-works">How it works</a>
+          <a href="/interview-tips.html" class="active">Interview tips</a>
+          <a href="/career-guide">Career Guide</a>
+          <a href="/pricing">Pricing</a>
+          
+        </nav>
+        <div class="navr">
+          <button class="login">Log in</button>
+          <button class="cta">Translate my CV →</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+      <span class="eyebrow"><span class="dot"></span>Interview tips</span>
+      <h1>
+        Walk in knowing exactly
+        <span style="color: #5b4fe8">what they're looking for.</span>
+      </h1>
+      <p class="lead">
+        The same interview, three different worlds. Pick your track and learn
+        how each panel really evaluates you — and how to answer.
+      </p>
+    </section>
+
+    <!-- TABS -->
+    <div class="tabwrap">
+      <div class="tabs">
+        <button class="tab active" data-tab="un">
+          UN <span class="sm">Competency-based</span>
+        </button>
+        <button class="tab" data-tab="eu">
+          EU <span class="sm">EPSO</span>
+        </button>
+        <button class="tab" data-tab="corp">
+          Corporate <span class="sm">Private sector</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- ============ UN ============ -->
+    <div class="tabpanel active" id="un">
+      <section class="sec">
+        <div class="wrap">
+          <div class="sechead">
+            <span class="eyebrow"><span class="dot"></span>The core idea</span>
+            <h2>Past behaviour is the best predictor of future performance.</h2>
+            <p>
+              Across the UN system, almost every question is about something you
+              actually did. Show the right competency, with depth, and what you
+              learned.
+            </p>
+          </div>
+          <div class="stats">
+            <div class="stat"><b>3–5</b><span>panellists</span></div>
+            <div class="stat"><b>45–60 min</b><span>length</span></div>
+            <div class="stat"><b>4–5</b><span>questions</span></div>
+            <div class="stat"><b>5–8 min</b><span>per answer</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="sec wash">
+        <div class="wrap">
+          <div class="sechead">
+            <h2>Structure every answer: STAR / CAR-L</h2>
+          </div>
+          <div class="steps s5">
+            <div class="stp">
+              <span class="lt">S</span>
+              <h4>Situation</h4>
+              <p>
+                Set the scene briefly: what it was and how you got involved.
+              </p>
+              <div class="alt">CAR-L: Context</div>
+            </div>
+            <div class="stp">
+              <span class="lt">T</span>
+              <h4>Task</h4>
+              <p>The specific goal or challenge you owned.</p>
+            </div>
+            <div class="stp">
+              <span class="lt">A</span>
+              <h4>Action</h4>
+              <p>What you did — attributable to you, not "the team".</p>
+              <div class="alt">CAR-L: Action</div>
+            </div>
+            <div class="stp">
+              <span class="lt">R</span>
+              <h4>Result</h4>
+              <p>The outcome and measurable impact.</p>
+              <div class="alt">CAR-L: Result</div>
+            </div>
+            <div class="stp">
+              <span class="lt">L</span>
+              <h4>Reflection</h4>
+              <p>What you learned and would do differently.</p>
+              <div class="alt">CAR-L: Learning</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="sec">
+        <div class="wrap">
+          <div class="sechead"><h2>What you're assessed on</h2></div>
+          <div class="card">
+            <div class="cgroup">
+              <div class="cglabel">Core values</div>
+              <div class="chips">
+                <span class="chip"><span class="d v"></span>Integrity</span
+                ><span class="chip"
+                  ><span class="d v"></span>Professionalism</span
+                ><span class="chip"
+                  ><span class="d v"></span>Respect for Diversity</span
+                >
+              </div>
+            </div>
+            <div class="cgroup">
+              <div class="cglabel">Core competencies</div>
+              <div class="chips">
+                <span class="chip"><span class="d c"></span>Communication</span
+                ><span class="chip"><span class="d c"></span>Teamwork</span
+                ><span class="chip"
+                  ><span class="d c"></span>Planning &amp; Organizing</span
+                ><span class="chip"
+                  ><span class="d c"></span>Accountability</span
+                ><span class="chip"><span class="d c"></span>Creativity</span
+                ><span class="chip"
+                  ><span class="d c"></span>Client &amp; Result
+                  Orientation</span
+                ><span class="chip"
+                  ><span class="d c"></span>Continuous Learning</span
+                ><span class="chip"
+                  ><span class="d c"></span>Organizational Awareness</span
+                >
+              </div>
+            </div>
+            <div class="cgroup">
+              <div class="cglabel">Managerial (supervisory roles)</div>
+              <div class="chips">
+                <span class="chip"><span class="d m"></span>Vision</span
+                ><span class="chip"><span class="d m"></span>Leadership</span
+                ><span class="chip"
+                  ><span class="d m"></span>Empowering Others</span
+                ><span class="chip"
+                  ><span class="d m"></span>Managing Performance</span
+                ><span class="chip"
+                  ><span class="d m"></span>Building Trust</span
+                ><span class="chip"
+                  ><span class="d m"></span>Judgement &amp;
+                  Decision-making</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="sec wash">
+        <div class="wrap">
+          <div class="sechead"><h2>During the interview</h2></div>
+          <div class="dd">
+            <div class="ddcard do">
+              <div class="ddh do">
+                <svg
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#1aa251"
+                  stroke-width="2"
+                >
+                  <circle cx="12" cy="12" r="9" />
+                  <path
+                    d="M8 12l3 3 5-6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  /></svg
+                >Do
+              </div>
+              <div class="ddli">
+                <svg
+                  width="17"
+                  height="17"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#1aa251"
+                  stroke-width="2.4"
+                >
+                  <path
+                    d="M5 12l5 5 9-10"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  /></svg
+                >Talk in "I", not "we" — your role, actions and impact.
+              </div>
+              <div class="ddli">
+                <svg
+                  width="17"
+                  height="17"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#1aa251"
+                  stroke-width="2.4"
+                >
+                  <path
+                    d="M5 12l5 5 9-10"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  /></svg
+                >Stand up on phone/video; use pitch, tone, speed, silence.
+              </div>
+              <div class="ddli">
+                <svg
+                  width="17"
+                  height="17"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#1aa251"
+                  stroke-width="2.4"
+                >
+                  <path
+                    d="M5 12l5 5 9-10"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  /></svg
+                >It's fine to talk about challenges — show what you learned.
+              </div>
+              <div class="ddli">
+                <svg
+                  width="17"
+                  height="17"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#1aa251"
+                  stroke-width="2.4"
+                >
+                  <path
+                    d="M5 12l5 5 9-10"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  /></svg
+                >Prepare one good question for the panel.
+              </div>
+            </div>
+            <div class="ddcard dont">
+              <div class="ddh dont">
+                <svg
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#e0556b"
+                  stroke-width="2"
+                >
+                  <circle cx="12" cy="12" r="9" />
+                  <path d="M8 8l8 8M16 8l-8 8" stroke-linecap="round" /></svg
+                >Don't
+              </div>
+              <div class="ddli">
+                <svg
+                  width="17"
+                  height="17"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#e0556b"
+                  stroke-width="2.4"
+                >
+                  <path d="M7 7l10 10M17 7L7 17" stroke-linecap="round" /></svg
+                >Answer in the hypothetical or in vague generalities.
+              </div>
+              <div class="ddli">
+                <svg
+                  width="17"
+                  height="17"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#e0556b"
+                  stroke-width="2.4"
+                >
+                  <path d="M7 7l10 10M17 7L7 17" stroke-linecap="round" /></svg
+                >Overstate your role — panels probe and references validate.
+              </div>
+              <div class="ddli">
+                <svg
+                  width="17"
+                  height="17"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#e0556b"
+                  stroke-width="2.4"
+                >
+                  <path d="M7 7l10 10M17 7L7 17" stroke-linecap="round" /></svg
+                >Interrupt the panel.
+              </div>
+              <div class="ddli">
+                <svg
+                  width="17"
+                  height="17"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#e0556b"
+                  stroke-width="2.4"
+                >
+                  <path d="M7 7l10 10M17 7L7 17" stroke-linecap="round" /></svg
+                >Ask about salary or benefits (it's on the website).
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="sec">
+        <div class="wrap">
+          <div class="sechead">
+            <span class="eyebrow"><span class="dot"></span>Question bank</span>
+            <h2>Practice questions, by competency</h2>
+            <p>
+              A taste below. The full bank — every competency, with
+              how-to-answer guidance — lives inside.
+            </p>
+          </div>
+          <div class="bank">
+            <div class="qrow">
+              <span class="ci">I</span>Tell me about a professional or ethical
+              dilemma you faced.
+            </div>
+            <div class="qrow">
+              <span class="ci">P</span>Describe a project you delivered despite
+              serious obstacles.
+            </div>
+            <div class="qrow">
+              <span class="ci">T</span>A time your objectives clashed with your
+              team's — how did you handle it?
+            </div>
+            <div class="qrow">
+              <span class="ci">C</span>When did your communication change an
+              outcome?
+            </div>
+            <div class="qrow">
+              <span class="ci">R</span>Assessing a client's real needs (e.g.
+              refugees/IDPs) and meeting them.
+            </div>
+            <div class="fade"></div>
+            <div class="lock">
+              <div class="lk">
+                <svg
+                  width="15"
+                  height="15"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#9aa0b2"
+                  stroke-width="2"
+                >
+                  <rect x="5" y="11" width="14" height="9" rx="2" />
+                  <path
+                    d="M8 11V8a4 4 0 0 1 8 0v3"
+                    stroke-linecap="round"
+                  /></svg
+                >40+ questions with model structure &amp; common mistakes
+              </div>
+              <br />
+              <button class="go">Unlock the full question bank →</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="sec wash">
+        <div class="wrap">
+          <div class="sechead">
+            <span class="eyebrow"
+              ><span class="dot"></span>For human-rights roles</span
+            >
+            <h2>Speak the language of the mandate</h2>
+          </div>
+          <div class="hr">
+            <div class="hh">
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#5B4FE8"
+                stroke-width="1.9"
+              >
+                <path
+                  d="M12 3l7 3v6c0 4.4-3 7.5-7 9-4-1.5-7-4.6-7-9V6l7-3z"
+                  stroke-linejoin="round"
+                /></svg
+              >For OHCHR and similar mandates
+            </div>
+            <p>
+              Weave the international human-rights framework into your examples.
+              Whenever you give a STAR/CAR-L answer, name the mechanism it
+              connected to.
+            </p>
+            <div class="hrgrid">
+              <div class="hrcard">
+                <b>Special procedures</b
+                ><span
+                  >Special Rapporteurs, Working Groups, Independent Experts —
+                  how your work fed their mandates.</span
+                >
+              </div>
+              <div class="hrcard">
+                <b>Treaty bodies</b
+                ><span
+                  >CCPR, CESCR, CEDAW, CAT, CRC, CERD, CRPD — reporting,
+                  follow-up to concluding observations.</span
+                >
+              </div>
+              <div class="hrcard">
+                <b>Conventions &amp; instruments</b
+                ><span
+                  >Ground examples in specific conventions and standards, not
+                  generic "human rights".</span
+                >
+              </div>
+              <div class="hrcard">
+                <b>Groups in vulnerability</b
+                ><span
+                  >Refugees, IDPs, migrants, women, children, persons with
+                  disabilities, indigenous peoples, LGBTI.</span
+                >
+              </div>
+            </div>
+            <div class="hrtip">
+              <b>Example move:</b> instead of "I coordinated a report," say "I
+              coordinated inputs that fed into the Special Rapporteur's country
+              report, aligned with the State's CEDAW concluding observations."
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ============ EU ============ -->
+    <div class="tabpanel" id="eu">
+      <section class="sec">
+        <div class="wrap">
+          <div class="sechead">
+            <span class="eyebrow teal"
+              ><span class="dot"></span>EPSO — 2023 framework</span
+            >
+            <h2>Structured, competency-based — eight general competencies.</h2>
+            <p>
+              After EPSO's tests or a CAST shortlisting, the interview mixes a
+              short self-introduction, technical questions on your policy area,
+              and competency questions — with STAR as the expected structure.
+            </p>
+          </div>
+          <div class="stats">
+            <div class="stat"><b>3 (up to 5)</b><span>panellists</span></div>
+            <div class="stat"><b>30–45 min</b><span>length</span></div>
+            <div class="stat"><b>~10 min</b><span>per competency</span></div>
+            <div class="stat"><b>2–3 min</b><span>intro pitch</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="sec wash">
+        <div class="wrap">
+          <div class="sechead"><h2>How the interview flows</h2></div>
+          <div class="steps s4">
+            <div class="stp">
+              <span class="lt">1</span>
+              <h4>Introduce yourself</h4>
+              <p>
+                A 2–3 min elevator pitch anchored to the vacancy's Essential
+                Requirements.
+              </p>
+            </div>
+            <div class="stp">
+              <span class="lt">2</span>
+              <h4>Technical questions</h4>
+              <p>
+                Your policy area: the relevant EU framework, regulation or
+                programme.
+              </p>
+            </div>
+            <div class="stp">
+              <span class="lt">3</span>
+              <h4>Competency questions</h4>
+              <p>
+                1–3 behavioural questions, answered with STAR, from the Notice
+                of Competition.
+              </p>
+            </div>
+            <div class="stp">
+              <span class="lt">4</span>
+              <h4>Soft-skills</h4>
+              <p>Often in a 2nd EU working language (French/German).</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="sec">
+        <div class="wrap">
+          <div class="sechead"><h2>The eight general competencies</h2></div>
+          <div class="card">
+            <div class="cgroup">
+              <div class="cglabel">EPSO Competency Framework</div>
+              <div class="chips">
+                <span class="chip"
+                  ><span class="d e"></span>Critical thinking &amp; creative
+                  problem-solving</span
+                >
+                <span class="chip"
+                  ><span class="d e"></span>Decision-making &amp; getting
+                  results</span
+                >
+                <span class="chip"
+                  ><span class="d e"></span>Information management (digital
+                  &amp; data)</span
+                >
+                <span class="chip"
+                  ><span class="d e"></span>Self-management</span
+                >
+                <span class="chip"
+                  ><span class="d e"></span>Working together</span
+                >
+                <span class="chip"
+                  ><span class="d e"></span>Learning as a skill</span
+                >
+                <span class="chip"><span class="d e"></span>Communication</span>
+                <span class="chip"
+                  ><span class="d e"></span>Intrapreneurship</span
+                >
+              </div>
+            </div>
+            <div class="cgroup">
+              <div class="cglabel">Pro tip</div>
+              <p
+                style="font-size: 14.5px; color: var(--grey); line-height: 1.55"
+              >
+                Not all eight are tested every time. Check the
+                <b>Notice of Competition</b> — it names which competencies your
+                panel will focus on. Each one breaks down into "anchors"
+                (specific behaviours the panel scores).
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="sec wash">
+        <div class="wrap">
+          <div class="sechead"><h2>During the interview</h2></div>
+          <div class="dd">
+            <div class="ddcard do">
+              <div class="ddh do">
+                <svg
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#1aa251"
+                  stroke-width="2"
+                >
+                  <circle cx="12" cy="12" r="9" />
+                  <path
+                    d="M8 12l3 3 5-6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  /></svg
+                >Do
+              </div>
+              <div class="ddli">
+                <svg
+                  width="17"
+                  height="17"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#1aa251"
+                  stroke-width="2.4"
+                >
+                  <path
+                    d="M5 12l5 5 9-10"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  /></svg
+                >Prepare the opening pitch — it's predictable, so rehearse it.
+              </div>
+              <div class="ddli">
+                <svg
+                  width="17"
+                  height="17"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#1aa251"
+                  stroke-width="2.4"
+                >
+                  <path
+                    d="M5 12l5 5 9-10"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  /></svg
+                >Look up your panel on LinkedIn (names come in the invite).
+              </div>
+              <div class="ddli">
+                <svg
+                  width="17"
+                  height="17"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#1aa251"
+                  stroke-width="2.4"
+                >
+                  <path
+                    d="M5 12l5 5 9-10"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  /></svg
+                >Show, don't tell — give evidence, not "I'm a great team
+                player".
+              </div>
+              <div class="ddli">
+                <svg
+                  width="17"
+                  height="17"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#1aa251"
+                  stroke-width="2.4"
+                >
+                  <path
+                    d="M5 12l5 5 9-10"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  /></svg
+                >Be concise — long answers work against you.
+              </div>
+            </div>
+            <div class="ddcard dont">
+              <div class="ddh dont">
+                <svg
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#e0556b"
+                  stroke-width="2"
+                >
+                  <circle cx="12" cy="12" r="9" />
+                  <path d="M8 8l8 8M16 8l-8 8" stroke-linecap="round" /></svg
+                >Don't
+              </div>
+              <div class="ddli">
+                <svg
+                  width="17"
+                  height="17"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#e0556b"
+                  stroke-width="2.4"
+                >
+                  <path d="M7 7l10 10M17 7L7 17" stroke-linecap="round" /></svg
+                >Start with personal history ("I was born in…").
+              </div>
+              <div class="ddli">
+                <svg
+                  width="17"
+                  height="17"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#e0556b"
+                  stroke-width="2.4"
+                >
+                  <path d="M7 7l10 10M17 7L7 17" stroke-linecap="round" /></svg
+                >Sound over-rehearsed or memorized.
+              </div>
+              <div class="ddli">
+                <svg
+                  width="17"
+                  height="17"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#e0556b"
+                  stroke-width="2.4"
+                >
+                  <path d="M7 7l10 10M17 7L7 17" stroke-linecap="round" /></svg
+                >Claim you need no further learning — a self-awareness red flag.
+              </div>
+              <div class="ddli">
+                <svg
+                  width="17"
+                  height="17"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#e0556b"
+                  stroke-width="2.4"
+                >
+                  <path d="M7 7l10 10M17 7L7 17" stroke-linecap="round" /></svg
+                >Give abstract statements with no concrete example.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="sec">
+        <div class="wrap">
+          <div class="sechead">
+            <span class="eyebrow teal"
+              ><span class="dot"></span>Question bank</span
+            >
+            <h2>EPSO-style practice questions</h2>
+            <p>
+              A taste below. The full bank — by competency, with how-to-answer
+              guidance — lives inside.
+            </p>
+          </div>
+          <div class="bank">
+            <div class="qrow">
+              <span class="ci">1</span>Please present yourself and explain why
+              you applied.
+            </div>
+            <div class="qrow">
+              <span class="ci">2</span>A time you expanded your knowledge at
+              work without being told to.
+            </div>
+            <div class="qrow">
+              <span class="ci">3</span>Working together — resolving a
+              disagreement to deliver a shared result.
+            </div>
+            <div class="qrow">
+              <span class="ci">4</span>A tough decision you made under real
+              constraints.
+            </div>
+            <div class="qrow">
+              <span class="ci">5</span>How do you handle stress or pressure at
+              work?
+            </div>
+            <div class="fade"></div>
+            <div class="lock">
+              <div class="lk">
+                <svg
+                  width="15"
+                  height="15"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#9aa0b2"
+                  stroke-width="2"
+                >
+                  <rect x="5" y="11" width="14" height="9" rx="2" />
+                  <path
+                    d="M8 11V8a4 4 0 0 1 8 0v3"
+                    stroke-linecap="round"
+                  /></svg
+                >Full bank across the 8 competencies + soft-skills, with
+                guidance
+              </div>
+              <br />
+              <button class="go">Unlock the full question bank →</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="sec wash">
+        <div class="wrap">
+          <div class="sechead">
+            <span class="eyebrow teal"
+              ><span class="dot"></span>Getting in</span
+            >
+            <h2>Ways into the EU &amp; application essentials</h2>
+          </div>
+          <div class="hr euc">
+            <div class="hh">
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#1b4dc4"
+                stroke-width="1.9"
+              >
+                <circle cx="12" cy="12" r="9" />
+                <path d="M12 7v5l3 2" stroke-linecap="round" /></svg
+              >Entry points &amp; what makes a CV stand out
+            </div>
+            <p>
+              Beyond the interview, panels reward candidates who connect their
+              work to the EU's mission — and it all starts with a tailored
+              application.
+            </p>
+            <div class="hrgrid">
+              <div class="hrcard">
+                <b>Entry points</b
+                ><span
+                  >EPSO reserve list, Contract agents (CAST), Traineeships (Blue
+                  Book), Seconded National Experts, temporary agents.</span
+                >
+              </div>
+              <div class="hrcard">
+                <b>What moves the needle</b
+                ><span
+                  >Languages (EN + FR/DE), strategic networking, a CV that
+                  stands out fast.</span
+                >
+              </div>
+              <div class="hrcard">
+                <b>Tailor every CV</b
+                ><span
+                  >Adapt to each vacancy; short sentences, concrete examples,
+                  achievements over duties.</span
+                >
+              </div>
+              <div class="hrcard">
+                <b>Motivation letter</b
+                ><span
+                  >Hook from line one, show real knowledge of the organisation,
+                  avoid clichés.</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ============ CORPORATE ============ -->
+    <div class="tabpanel" id="corp">
+      <section class="sec">
+        <div class="wrap">
+          <div class="sechead">
+            <span class="eyebrow"><span class="dot"></span>Private sector</span>
+            <h2>If you can't communicate your value, they won't see it.</h2>
+            <p>
+              Corporate interviews weight self-presentation, storytelling and
+              "fit + value" heavily. Sell your impact clearly, with a story that
+              sets you apart.
+            </p>
+          </div>
+          <div class="stats">
+            <div class="stat"><b>30–60 min</b><span>length</span></div>
+            <div class="stat">
+              <b>60–90 s</b><span>"tell me about yourself"</span>
+            </div>
+            <div class="stat"><b>2–3 min</b><span>origin story</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="sec wash">
+        <div class="wrap">
+          <div class="sechead">
+            <h2>"Tell me about yourself" — the make-or-break opener</h2>
+          </div>
+          <div class="steps s3" style="margin-bottom: 18px">
+            <div class="stp">
+              <span class="lt">Now</span>
+              <h4>Present</h4>
+              <p>Where you are now and what you do — in one strong line.</p>
+            </div>
+            <div class="stp">
+              <span class="lt">Past</span>
+              <h4>Past</h4>
+              <p>The journey and achievements that built you for this role.</p>
+            </div>
+            <div class="stp">
+              <span class="lt">Next</span>
+              <h4>Future</h4>
+              <p>Why this role, this company, now.</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="cglabel">Four things to include (Richard McMunn)</div>
+            <div class="chips">
+              <span class="chip"
+                ><span class="d v"></span>Skills &amp; qualities</span
+              ><span class="chip"
+                ><span class="d v"></span>Experience &amp; qualifications</span
+              ><span class="chip"
+                ><span class="d v"></span>Key achievements</span
+              ><span class="chip"
+                ><span class="d v"></span>The type of person you are</span
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="sec">
+        <div class="wrap">
+          <div class="sechead"><h2>Prepare, present, recover</h2></div>
+          <div class="steps s3">
+            <div class="stp">
+              <span class="lt">01</span>
+              <h4>Before</h4>
+              <p>
+                Research the company &amp; interviewer, analyse the role,
+                prepare concrete examples, rehearse out loud.
+              </p>
+            </div>
+            <div class="stp">
+              <span class="lt">02</span>
+              <h4>Online setup</h4>
+              <p>
+                Real tidy background, quiet &amp; well-lit, test the tech, no
+                papers — post-its around the camera.
+              </p>
+            </div>
+            <div class="stp">
+              <span class="lt">03</span>
+              <h4>If you go blank</h4>
+              <p>
+                Pause 5–10 seconds, breathe, build a short structured answer. A
+                brief silence is fine.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="sec wash">
+        <div class="wrap">
+          <div class="sechead">
+            <span class="eyebrow"
+              ><span class="dot"></span>The differentiator</span
+            >
+            <h2>Your origin story</h2>
+          </div>
+          <div class="hr">
+            <div class="hh">
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#5B4FE8"
+                stroke-width="1.9"
+              >
+                <path d="M5 4h14v13l-7-4-7 4z" stroke-linejoin="round" /></svg
+              >A 2–3 minute story that changes how they see you
+            </div>
+            <p>
+              Storytelling is one of the most influential forms of
+              communication. Don't be the person who describes themselves with
+              adjectives — be the one who differentiates themselves with a
+              short, true story tied directly to the job.
+            </p>
+            <div class="hrtip">
+              <b>Build it:</b> a turning point → what you did → the result it
+              created → why it points straight at this role. Rehearse it until
+              it sounds natural, not memorized.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="sec">
+        <div class="wrap">
+          <div class="sechead">
+            <span class="eyebrow"><span class="dot"></span>Question bank</span>
+            <h2>The questions they'll actually ask</h2>
+            <p>
+              A taste below. The full bank — with how to answer each, including
+              the tricky ones — lives inside.
+            </p>
+          </div>
+          <div class="bank">
+            <div class="qrow">
+              <span class="ci">★</span>Tell me about yourself.
+            </div>
+            <div class="qrow">
+              <span class="ci">?</span>Why this company, and why this role?
+            </div>
+            <div class="qrow">
+              <span class="ci">±</span>What's your biggest weakness?
+              <span style="color: var(--mut); font-weight: 600"
+                >(the trap)</span
+              >
+            </div>
+            <div class="qrow">
+              <span class="ci">€</span>What are your salary expectations?
+            </div>
+            <div class="qrow">
+              <span class="ci">→</span>Do you have questions for us?
+            </div>
+            <div class="fade"></div>
+            <div class="lock">
+              <div class="lk">
+                <svg
+                  width="15"
+                  height="15"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#9aa0b2"
+                  stroke-width="2"
+                >
+                  <rect x="5" y="11" width="14" height="9" rx="2" />
+                  <path
+                    d="M8 11V8a4 4 0 0 1 8 0v3"
+                    stroke-linecap="round"
+                  /></svg
+                >Every common question with how-to-answer + the mistakes to
+                avoid
+              </div>
+              <br />
+              <button class="go">Unlock the full question bank →</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="sec wash">
+        <div class="wrap">
+          <div class="sechead">
+            <span class="eyebrow"
+              ><span class="dot"></span>Crossing worlds</span
+            >
+            <h2>Coming from the UN / NGO world?</h2>
+          </div>
+          <div class="hr">
+            <div class="hh">
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#5B4FE8"
+                stroke-width="1.9"
+              >
+                <path
+                  d="M5 12h14M13 6l6 6-6 6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                /></svg
+              >Translate your impact into business language
+            </div>
+            <p>
+              The same achievements, re-registered for a corporate panel. Lead
+              with outcomes and metrics, and drop institutional jargon.
+            </p>
+            <div class="hrgrid">
+              <div class="hrcard">
+                <b>Beneficiaries → clients / stakeholders</b
+                ><span
+                  >Speak in the language of the people a business serves.</span
+                >
+              </div>
+              <div class="hrcard">
+                <b>"Inter-agency cluster" → "cross-org stakeholder alignment"</b
+                ><span>Same work, corporate register.</span>
+              </div>
+              <div class="hrcard">
+                <b>Lead with metrics</b
+                ><span
+                  >%, budget, timelines, people managed, results
+                  delivered.</span
+                >
+              </div>
+              <div class="hrcard">
+                <b>Show commercial awareness</b
+                ><span
+                  >Frame mission impact as value, efficiency and delivery.</span
+                >
+              </div>
+            </div>
+            <div class="hrtip">
+              <b>That's literally what CV Optimizer does</b> — translate what's
+              true between worlds. Use the translator on your CV, then bring the
+              same framing into the interview.
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- CTA BAND -->
+    <section class="ctaband">
+      <h2>Your CV, translated for where you're going.</h2>
+      <p>
+        Walk into the interview already speaking the right language. Translate
+        your CV and unlock the full question bank.
+      </p>
+      <button class="b">Translate my CV →</button>
+    </section>
+
+    <script>
+      document.querySelectorAll('.tab').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          document.querySelectorAll('.tab').forEach(function (b) {
+            b.classList.remove('active');
+          });
+          document.querySelectorAll('.tabpanel').forEach(function (p) {
+            p.classList.remove('active');
+          });
+          btn.classList.add('active');
+          document.getElementById(btn.dataset.tab).classList.add('active');
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      });
+    </script>
+  </body>
+</html>
