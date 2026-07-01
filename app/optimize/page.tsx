@@ -242,7 +242,7 @@ export default function TranslatePage() {
 
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: 6 }}>
           <Link href="/dashboard" style={{ color: MUT, fontSize: 14, fontWeight: 600, textDecoration: 'none' }}>← Back to dashboard</Link>
-          <button style={{ padding: '14px 28px', borderRadius: 12, border: 'none', cursor: 'pointer', fontWeight: 700, fontSize: 15, color: '#fff', background: running ? Zsz#9aa0b8Zsz : P, opacity: running ? 0.8 : 1 }} onClick={runCorePath} disabled={running}>{running ? Zsz Analyzing your CV...Zsz : ZszContinue to Review →'}</button>
+                  <button style={{ padding: '14px 28px', borderRadius: 12, border: 'none', cursor: 'pointer', fontWeight: 700, fontSize: 15, color: '#fff', background: running ? '#9aa0b8' : P, opacity: running ? 0.8 : 1 }} onClick={runCorePath} disabled={running}>{running ? ' Analyzing your CV...' : 'Continue to Review →'}</button>
         </div>
       </div>
     </main></div>
