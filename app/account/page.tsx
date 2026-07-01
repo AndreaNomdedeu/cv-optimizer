@@ -27,7 +27,7 @@ export default function AccountPage() {
   function startEdit() { setDraft(data); setEditing(true); }
   function cancelEdit() { setDraft(data); setEditing(false); }
   function saveEdit() { setData(draft); setEditing(false); }
-  function change(k, v) { setDraft(function(d){ const n = Object.assign({}, d); n[k] = v; return n; }); }
+    function change(k: string, v: any) { setDraft(function(d: any){ const n = Object.assign({}, d); n[k] = v; return n; }); }
   return (
     <div className={"min-h-screen"} style={{ background: BRAND.surface }}>
       <header className={"sticky top-0 z-10 border-b bg-white"} style={{ borderColor: BRAND.line }}>
