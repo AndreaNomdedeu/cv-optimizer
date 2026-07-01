@@ -13,10 +13,10 @@ export default function TranslatePage() {
 
   const P = '#4F46E5', INK = '#1F2433', MUT = '#6B7384', LINE = '#E5E7F0', BG = '#F6F7FB', CARD = '#FFFFFF', SOFT = '#EEF0FB';
   const steps = ['Your CV', 'The job', 'Direction', 'Review'];
-  const active = step - 1;
   const [running, setRunning] = useState(false);
   const [err, setErr] = useState('');
   const [step, setStep] = useState(1);
+  const active = step - 1;
   const [parsed, setParsed] = useState<any>(null);
   const [position, setPosition] = useState<any>(null);
   const [review, setReview] = useState<any>(null);
