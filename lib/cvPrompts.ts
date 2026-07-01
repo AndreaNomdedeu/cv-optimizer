@@ -16,8 +16,8 @@ export const parseSystem =
   `You are a precise parser. Extract structure from a CV and a job ad. Never rewrite, translate, improve or invent - only segment and label what is literally there. Return JSON only.`;
 
 export function parseUser(rawCv: string, rawJob: string) {
-  return `<cv></cv>
-<job_ad></job_ad>
+    return `<cv>${rawCv}</cv>
+<job_ad>${rawJob}</job_ad>
 
 Return:
 {
