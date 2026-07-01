@@ -45,7 +45,7 @@ export async function POST(req: NextRequest) {
       }
     }
 
-    return NextResponse.json({ ok: true, review, raw: out });
+        return NextResponse.json({ ok: true, review: position, raw: out });
   } catch (e: any) {
     return NextResponse.json({ ok: false, error: String(e) }, { status: 500 });
   }
